@@ -16,7 +16,6 @@ import Signup from './components/signup';
 function App() {
     const { pathname } = window.location;
 
-    // Check if the current route is login or signup
     const isLoginOrSignup = pathname === '/login' || pathname === '/signup' || pathname === '/home' || pathname === '/';
 
     return (
