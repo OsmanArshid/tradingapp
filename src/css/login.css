@@ -1,0 +1,100 @@
+body {
+    background-color: #222228;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:  #222228;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+}
+::placeholder {
+    color: #CCCCCC; /* Lighter placeholder */
+    font-weight: lighter;
+    opacity: 1; /* Fix for inconsistent placeholder styles */
+}
+
+.login-header {
+    font-weight: bold; 
+    padding: 20px;
+    font-size: 30px;
+    color: #FFFFFF;
+    margin-bottom: 30px; /* Added space below header */
+}
+
+.form {
+    background-color: rgb(69, 69, 69);
+    border-radius: 10px; /* Rounded corners */
+    padding: 40px; /* Increased padding for better spacing */
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.3); /* Deeper shadow for depth */
+}
+
+.back-button {
+    position:absolute;
+    top: 90px;
+    left: 100px;
+    color: greenyellow;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:green;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+  }
+
+.user-inp, .pass-inp {
+    border-radius: 20px; /* More rounded */
+    background-color: rgb(245, 245, 251);
+    color: rgb(61, 59, 59);
+    padding: 15px; /* Increased padding for larger touch targets */
+    margin-top: 20px;
+    width: 100%; /* Full width */
+    border: none; /* Removed border */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); /* Inner shadow for depth */
+}
+
+
+.sub-button {
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: rgba(154, 198, 30, 1);
+    color: white;
+    padding: 10px 20px; /* Larger button */
+    border: none; /* Removed border */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.question, .lib-name {
+    color: white;
+    margin-top: 20px; /* Spacing */
+}
+
+a {
+    color: rgba(154, 198, 30, 1);
+    text-decoration: none; /* Remove underline */
+}
+
+.sub-button:hover {
+    background-color: rgba(153, 198, 30, 0.9); /* Slightly transparent on hover */
+    cursor: pointer;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .login-page {
+        margin: 20px;
+        padding: 50px 20px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+}

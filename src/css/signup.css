@@ -1,0 +1,93 @@
+.signup-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color:  #222228;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Modern font */
+}
+
+.signup-header {
+    font-size: 2em;
+    color: #fcf8f8;
+    margin-bottom: 30px; /* Increased margin for better spacing */
+}
+
+.form {
+    background: rgb(245, 245, 244);
+    padding: 30px; /* Increased padding for a more spacious feel */
+    border-radius: 10px; /* Slightly more rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Updated shadow for depth */
+    width: 350px; /* Slightly wider form */
+    max-width: 90%; /* Responsive max-width */
+}
+
+.form div {
+    margin-bottom: 20px; /* Increased spacing */
+}
+
+.form input[type='name'],
+.form input[type='email'],
+.form input[type='password'] {
+    width: 100%;
+    padding: 15px; /* More padding for larger touch targets */
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Slightly more rounded */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Smooth transition for focus */
+}
+
+.form input[type='name']:focus,
+.form input[type='email']:focus,
+.form input[type='password']:focus
+{
+    outline: none;
+    border-color: #050506;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2); /* Subtle focus glow */
+}
+
+.form button {
+    width: 100%;
+    padding: 15px; /* More padding for a larger button */
+    background-color: #523a1b;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Slightly more rounded */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.back-button {
+    position:relative;
+    top: -30px;
+    left: -150px;
+    color: greenyellow;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:green;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+  }
+
+.form button:hover {
+    background-color: #616568;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle hover shadow */
+}
+
+@media (max-width: 768px) {
+    .login-page {
+        padding: 50px 20px;
+        height: auto; /* Adjust height for smaller screens */
+    }
+
+    .form {
+        padding: 20px;
+    }
+}
