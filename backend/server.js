@@ -2,11 +2,15 @@ import { Socket, Server } from "socket.io";
 import http from "http";
 import { app } from "./app.js";
 import { config } from "dotenv";
-import { connect } from "./utils/db.js";
+import mongoose from 'mongoose';
+import { connect } from './utils/db.js';
+
 
 config({
   path: "./config.env",
 });
+
+connect();
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -15,7 +19,6 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
-
 
 
 io.on("connection", (socket) => {

@@ -13,6 +13,11 @@ const Home: React.FC = () => {
           <div className="login-button-container">
             <Link to="/login" className="login-button">LogIn</Link>
           </div>
+
+          <div className="signup-button-container">
+                    
+          <Link to="/signup" className="signup-button">SignUp</Link>
+          </div>
         
         </div>
       </section>
@@ -21,3 +26,4 @@ const Home: React.FC = () => {
 }
 
 export default Home;
+

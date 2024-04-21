@@ -28,7 +28,7 @@
 }
 
 .form input[type='name'],
-.form input[type='email'],
+.form input[type='Username'],
 .form input[type='password'] {
     width: 100%;
     padding: 15px; /* More padding for larger touch targets */
@@ -39,7 +39,7 @@
 }
 
 .form input[type='name']:focus,
-.form input[type='email']:focus,
+.form input[type='Username']:focus,
 .form input[type='password']:focus
 {
     outline: none;

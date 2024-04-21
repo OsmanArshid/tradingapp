@@ -1,14 +1,14 @@
 import React, { useState, FormEvent } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import { useAuth } from './authcontext';
 import '../css/login.css';
 import '../css/signup.css';
 
 const Login: React.FC = () => {
   const { login } = useAuth();
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-  const [error, setError] = useState<string>('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -19,19 +19,21 @@ const Login: React.FC = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
 
       if (response.ok) {
         const data = await response.json();
-        login(data.email);
+        login(data.username);
+            
       } else {
         const errorData = await response.json();
         setError(errorData.message || 'Login failed. Please try again.');
       }
-    } catch (networkError) {
+    } 
+    
+    catch (networkError) {
       console.error('Login Error:', networkError);
-      setError('Network error. Please try again.');
     }
   };
 
@@ -40,14 +42,8 @@ const Login: React.FC = () => {
       <Link to="/" className="back-button">Back</Link>
       <div className="login-header">LogIn to Trade</div>
       <form className='form' onSubmit={handleLogin}>
-        <div>
-          <input
-            className="user-inp"
-            type='email'
-            placeholder='Email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+      <div>
+          <input className="user-inp" type='username' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}/>
         </div>
         <div>
           <input

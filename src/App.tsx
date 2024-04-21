@@ -16,7 +16,7 @@ import Signup from './components/signup';
 function App() {
     const { pathname } = window.location;
 
-    const isLoginOrSignup = pathname === '/login' || pathname === '/signup' || pathname === '/home' || pathname === '/';
+    const isLoginOrSignup = pathname === '/login' || pathname === '/signup' || pathname === '/';
 
     return (
       <BrowserRouter>
@@ -24,14 +24,14 @@ function App() {
                 {!isLoginOrSignup && <Navbar />}
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/browse" element={<Browse />} />
-                    <Route path="/mytrade" element={<MyTrade />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/offersent" element={<Offersent />} />
-                    <Route path="/submitoffer" element={<Submitoffer />} />
+                    <Route path="/login" element={<Login/>} />
+                    <Route path="/signup" element={<Signup/>} />
+                    <Route path="/home" element={<ProtectedRoute><Home/></ProtectedRoute>} />
+                    <Route path="/browse" element={<ProtectedRoute><Browse/></ProtectedRoute>} />
+                    <Route path="/mytrade" element={<ProtectedRoute><MyTrade/></ProtectedRoute>} />
+                    <Route path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>} />
+                    <Route path="/offersent" element={<ProtectedRoute><Offersent/></ProtectedRoute>} />
+                    <Route path="/submitoffer" element={<ProtectedRoute><Submitoffer/></ProtectedRoute>} />
                 </Routes>
             </AuthProvider>
     </BrowserRouter>
